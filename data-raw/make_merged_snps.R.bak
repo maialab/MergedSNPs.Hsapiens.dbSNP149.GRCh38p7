@@ -1,0 +1,9 @@
+# # Columns old snp (first column), updated snp (seventh column)
+# col_types <- c("integer", rep("NULL", 5), "integer", "NULL", "NULL")
+# col_names <- c("old_snp", rep(NA, 5), "upd_snp", NA,NA)
+# merged_snps <- read.table("data-raw/RsMergeArch.bcp.gz",
+#                           col.names = col_names,
+#                           colClasses = col_types,
+#                           sep = "\t")
+#
+# devtools::use_data(merged_snps, internal = TRUE, overwrite = TRUE)
