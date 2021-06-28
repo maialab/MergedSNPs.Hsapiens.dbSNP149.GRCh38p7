@@ -10,4 +10,4 @@ merged_snps <- readr::read_tsv("data-raw/RsMergeArch.bcp.gz",
 #merged_snps_hash <- hash::hash(merged_snps$old_snp, merged_snps$upd_snp)
 #save(merged_snps, file = "inst/extdata/merged_snps.rda", compress = FALSE)
 
-usethis::use_data(merged_snps, internal = TRUE, overwrite = TRUE)
+usethis::use_data(merged_snps, internal = TRUE, overwrite = TRUE, version = 2)
