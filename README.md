@@ -20,12 +20,53 @@ into `/data-raw/RsMergeArch.bcp.gz`.
 
 ## Installation
 
-You can install the current version of
-MergedSNPs.Hsapiens.dbSNP149.GRCh38p7 with:
+Because I use [Git LFS](https://git-lfs.github.com/) to track some of
+the files in this R package, you will need to have [Git
+LFS](https://git-lfs.github.com/) installed before installing this
+package. You can check if you have Git LFS already installed by running:
+
+``` bash
+git lfs version
+```
+
+It should return Git LFS’s version if installed, or a Git error:
+`git: 'lfs' is not a git command. See 'git --help'.`
+
+If you don’t have it installed already, and if you are on Ubuntu, you
+can install it with:
+
+``` bash
+sudo apt-get update -y
+sudo apt-get install -y git-lfs
+```
+
+Then, because of issues
+[\#192](https://github.com/r-lib/remotes/issues/292),
+[\#91584](https://community.rstudio.com/t/cant-access-data-in-a-package-that-i-created/91584),
+[\#889](https://github.com/r-lib/devtools/issues/889), you need to clone
+this repository first and then install from the local folder generated
+on your computer:
+
+``` bash
+# This will clone the repository to your home folder.
+cd ~
+git clone https://github.com/maialab/MergedSNPs.Hsapiens.dbSNP149.GRCh38p7
+```
+
+And finally install MergedSNPs.Hsapiens.dbSNP149.GRCh38p7 from the local
+folder (assuming it’s in your home folder):
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("maialab/MergedSNPs.Hsapiens.dbSNP149.GRCh38p7")
+remotes::install_local("~/MergedSNPs.Hsapiens.dbSNP149.GRCh38p7")
+```
+
+If the installation went successful, you may remove the local folder
+`~/MergedSNPs.Hsapiens.dbSNP149.GRCh38p7` (or other path if you cloned
+to another folder):
+
+``` bash
+rm -rf ~/MergedSNPs.Hsapiens.dbSNP149.GRCh38p7
 ```
 
 ## Usage
